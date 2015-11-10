@@ -1,6 +1,6 @@
 PROG = serve
-SOURCES = $(PROG).c mongoose.c
-CFLAGS = -W -Wall -pthread $(CFLAGS_EXTRA)
+SOURCES = $(PROG).c mongoose.c $(wildcard deps/*/*.c)
+CFLAGS = -Ideps -std=c99 -W -Wall -pthread $(CFLAGS_EXTRA)
 
 ifeq ($(OS), Windows_NT)
 else

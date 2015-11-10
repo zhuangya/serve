@@ -1,8 +1,9 @@
 *.DS_Store
-*.gc* 
-*.dSYM 
-*.exe 
-*.obj 
-*.o 
+*.gc*
+*.dSYM
+*.exe
+*.obj
+*.o
 a.out
 dest/
+deps/

@@ -1,4 +1,7 @@
 #include "mongoose.h"
+#include "deps/debug/debug.h"
+
+static debug_t debugger;
 
 static const char *s_http_port = "8000";
 static int s_sig_num = 0;
@@ -21,6 +24,9 @@ static void ev_handler (struct mg_connection *nc, int ev, void *ev_data) {
 }
 
 int main (int argc, char const *argv[]) {
+
+  debug_init(&debugger, "serve");
+
   struct mg_mgr mgr;
   struct mg_connection *nc;
   int i;
@@ -36,6 +42,9 @@ int main (int argc, char const *argv[]) {
       s_http_port = argv[++i];
     }
   }
+
+  debug(&debugger, "document root: '%s'", s_http_server_opts.document_root);
+  debug(&debugger, "http port: '%s'", s_http_port);
 
   /* Start listening */
   mg_mgr_init(&mgr, NULL);
