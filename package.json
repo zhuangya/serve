@@ -1,0 +1,11 @@
+{
+  "name": "mongoose",
+  "repo": "cesanta/mongoose",
+  "version": "6.0",
+  "description": "Embedded web server for C/C++",
+  "license": "GPL2",
+  "dependencies": {
+    "stephenmathieson/debug.c": "0.0.1"
+  },
+  "src": ["mongoose.c"]
+}
